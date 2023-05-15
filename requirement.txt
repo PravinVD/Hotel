@@ -1,0 +1,12 @@
+antiorm==1.2.1
+asgiref==3.6.0
+backports.zoneinfo==0.2.1
+db==0.1.1
+db-sqlite3==0.0.1
+Django==4.2
+django-ckeditor==6.5.1
+django-js-asset==2.0.0
+django-label-tag-attr==1.0.2
+django-tinymce==3.6.1
+sqlparse==0.4.3
+tzdata==2023.3
