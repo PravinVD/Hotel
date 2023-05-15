@@ -1,0 +1,403 @@
+{% extends "index.html" %}
+{% block main %}
+<main role="main" class="main-content">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <h2 class="page-title text-center">Update Order Form</h2>
+
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-md-6">
+
+
+                        </div> <!-- /.col -->
+                        <div class="col-md-12">
+                            <div class="card shadow mb-4">
+                                <div class="row m-1 mt-4">
+                                    <div class="col-md-4">
+                                        <div class="form-group mb-3">
+                                            <label for="id_Table_number">Table Number</label>
+                                            <input type="number" class="form-control" name="Table_number" required
+                                                id="id_Table_number" value="{{update_order.Table_number}}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group mb-3">
+                                            <label for="id_Number_Of_Person">Total Person</label>
+                                            <input class="form-control" type="number" name="Number_Of_Person" required
+                                                id="id_Number_Of_Person" value="{{update_order.Number_Of_Person}}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group mb-3">
+                                            <label for="id_Discount">Discount in %</label>
+                                            <input class="form-control" type="number" name="Discount" required
+                                                id="id_Discount" value="{{update_order.Discount}}">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 my-4">
+                                    <table class="table table-bordered table-hover mb-0" width="100%">
+                                        <thead>
+                                            <tr>
+                                                <th>SR No</th>
+                                                <th>Item Name</th>
+                                                <th>QTY</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td width="10%">1</td>
+                                                <td>
+                                                    <div class="form-group col-md-12 col-12">
+
+                                                        <select class="form-control select2" type="text" name="item0"
+                                                            maxlength="300" required id="id_item0">
+                                                            <option>{{update_order.item0}}</option>
+                                                            {% for list in list_product  %}
+                                                            <option >{{list.item_name}}</option>
+                                                            
+                                                            {% endfor %}
+                                                        </select>
+                                                    </div> <!-- form-group -->
+                                                </td>
+                                                <td width="30%">
+                                                    <input class="form-control" type="number" name="item_qty0" value="{{update_order.item_qty0}}"
+                                                        required id="id_item_qty0">
+                                                </td>
+
+                                            </tr>
+
+
+                                            <tr>
+                                                <td width="10%">2</td>
+                                                <td>
+                                                    <div class="form-group col-md-12 col-12">
+
+                                                        <select class="form-control select2" type="text" name="item1" maxlength="300" required id="id_item1">
+                                                            <option>{{update_order.item1}}</option>
+                                                            {% for list in list_product  %}
+                                                            <option >{{list.item_name}}</option>
+                                                            
+                                                            {% endfor %}
+                                                        </select>
+                                                    </div> <!-- form-group -->
+                                                </td>
+                                                <td width="30%">
+                                                    <input class="form-control" type="number" name="item_qty1" value="{{update_order.item_qty1}}" required id="id_item_qty1">
+                                                </td>
+
+                                            </tr>
+
+                                            <tr>
+                                                <td width="10%">3</td>
+                                                <td>
+                                                    <div class="form-group col-md-12 col-12">
+
+                                                        <select class="form-control select2" type="text" name="item2" maxlength="300" required id="id_item2">
+                                                            <option>{{update_order.item2}}</option>
+                                                            {% for list in list_product  %}
+                                                            <option >{{list.item_name}}</option>
+                                                            
+                                                            {% endfor %}
+                                                        </select>
+                                                    </div> <!-- form-group -->
+                                                </td>
+                                                <td width="30%">
+                                                    <input class="form-control" type="number" name="item_qty2" value="{{update_order.item_qty2}}" required id="id_item_qty2">
+                                                </td>
+
+                                            </tr>
+
+                                            <tr>
+                                                <td width="10%">4</td>
+                                                <td>
+                                                    <div class="form-group col-md-12 col-12">
+
+                                                        <select class="form-control select2" type="text" name="item3" maxlength="300" required id="id_item3">
+                                                            <option>{{update_order.item3}}</option>
+                                                            {% for list in list_product  %}
+                                                            <option >{{list.item_name}}</option>
+                                                            
+                                                            {% endfor %}
+                                                        </select>
+                                                    </div> <!-- form-group -->
+                                                </td>
+                                                <td width="30%">
+                                                    <input class="form-control" type="number" name="item_qty3" value="{{update_order.item_qty3}}" required id="id_item_qty3">
+                                                </td>
+
+                                            </tr>
+
+                                            <tr>
+                                                <td width="10%">5</td>
+                                                <td>
+                                                    <div class="form-group col-md-12 col-12">
+
+                                                        <select class="form-control select2" type="text" name="item4" maxlength="300" required id="id_item4">
+                                                            <option>{{update_order.item4}}</option>
+                                                            {% for list in list_product  %}
+                                                            <option >{{list.item_name}}</option>
+                                                            
+                                                            {% endfor %}
+                                                        </select>
+                                                    </div> <!-- form-group -->
+                                                </td>
+                                                <td width="30%">
+                                                    <input class="form-control" type="number" name="item_qty4" value="{{update_order.item_qty4}}" required id="id_item_qty4">
+                                                </td>
+
+                                            </tr>
+
+                                            <tr>
+                                                <td width="10%">6</td>
+                                                <td>
+                                                    <div class="form-group col-md-12 col-12">
+
+                                                        <select class="form-control select2" type="text" name="item5" maxlength="300" required id="id_item5">
+                                                            <option>{{update_order.item5}}</option>
+                                                            {% for list in list_product  %}
+                                                            <option >{{list.item_name}}</option>
+                                                            
+                                                            {% endfor %}
+                                                        </select>
+                                                    </div> <!-- form-group -->
+                                                </td>
+                                                <td width="30%">
+                                                    <input class="form-control" type="number" name="item_qty5" value="{{update_order.item_qty5}}" required id="id_item_qty5">
+                                                </td>
+
+                                            </tr>
+
+                                            <tr>
+                                                <td width="10%">7</td>
+                                                <td>
+                                                    <div class="form-group col-md-12 col-12">
+
+                                                        <select class="form-control select2" type="text" name="item6" maxlength="300" required id="id_item6">
+                                                            <option>{{update_order.item6}}</option>
+                                                            {% for list in list_product  %}
+                                                            <option >{{list.item_name}}</option>
+                                                            
+                                                            {% endfor %}
+                                                        </select>
+                                                    </div> <!-- form-group -->
+                                                </td>
+                                                <td width="30%">
+                                                    <input class="form-control" type="number" name="item_qty6" value="{{update_order.item_qty6}}" required id="id_item_qty6">
+                                                </td>
+
+                                            </tr>
+
+                                            <tr>
+                                                <td width="10%">8</td>
+                                                <td>
+                                                    <div class="form-group col-md-12 col-12">
+
+                                                        <select class="form-control select2" type="text" name="item7" maxlength="300" required id="id_item7">
+                                                            <option>{{update_order.item7}}</option>
+                                                            {% for list in list_product  %}
+                                                            <option >{{list.item_name}}</option>
+                                                            
+                                                            {% endfor %}
+                                                        </select>
+                                                    </div> <!-- form-group -->
+                                                </td>
+                                                <td width="30%">
+                                                    <input class="form-control" type="number" name="item_qty7" value="{{update_order.item_qty7}}" required id="id_item_qty7">
+                                                </td>
+
+                                            </tr>
+
+                                            <tr>
+                                                <td width="10%">9</td>
+                                                <td>
+                                                    <div class="form-group col-md-12 col-12">
+
+                                                        <select class="form-control select2" type="text" name="item8" maxlength="300" required id="id_item8">
+                                                            <option>{{update_order.item8}}</option>
+                                                            {% for list in list_product  %}
+                                                            <option >{{list.item_name}}</option>
+                                                            
+                                                            {% endfor %}
+                                                        </select>
+                                                    </div> <!-- form-group -->
+                                                </td>
+                                                <td width="30%">
+                                                    <input class="form-control" type="number" name="item_qty8" value="{{update_order.item_qty8}}" required id="id_item_qty8">
+                                                </td>
+
+                                            </tr>
+
+                                            <tr>
+                                                <td width="10%">10</td>
+                                                <td>
+                                                    <div class="form-group col-md-12 col-12">
+
+                                                        <select class="form-control select2" type="text" name="item9" maxlength="300" required id="id_item9">
+                                                            <option>{{update_order.item9}}</option>
+                                                            {% for list in list_product  %}
+                                                            <option >{{list.item_name}}</option>
+                                                            
+                                                            {% endfor %}
+                                                        </select>
+                                                    </div> <!-- form-group -->
+                                                </td>
+                                                <td width="30%">
+                                                    <input class="form-control" type="number" name="item_qty9" value="{{update_order.item_qty9}}" required id="id_item_qty9">
+                                                </td>
+
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                    <div class="text-center mt-2">
+                                        <button type="submit" class="btn mb-2 btn-primary">update Order</button>
+                                    </div>
+
+                                </div>
+
+                            </div> <!-- /.card -->
+
+                        </div> <!-- /.col -->
+
+                    </div> <!-- end section -->
+                </form>
+
+            </div> <!-- .col-12 -->
+        </div> <!-- .row -->
+    </div> <!-- .container-fluid -->
+    <div class="modal fade modal-notif modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="defaultModalLabel">Notifications</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="list-group list-group-flush my-n3">
+                        <div class="list-group-item bg-transparent">
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+                                    <span class="fe fe-box fe-24"></span>
+                                </div>
+                                <div class="col">
+                                    <small><strong>Package has uploaded successfull</strong></small>
+                                    <div class="my-0 text-muted small">Package is zipped and uploaded</div>
+                                    <small class="badge badge-pill badge-light text-muted">1m ago</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list-group-item bg-transparent">
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+                                    <span class="fe fe-download fe-24"></span>
+                                </div>
+                                <div class="col">
+                                    <small><strong>Widgets are updated successfull</strong></small>
+                                    <div class="my-0 text-muted small">Just create new layout Index, form, table</div>
+                                    <small class="badge badge-pill badge-light text-muted">2m ago</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list-group-item bg-transparent">
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+                                    <span class="fe fe-inbox fe-24"></span>
+                                </div>
+                                <div class="col">
+                                    <small><strong>Notifications have been sent</strong></small>
+                                    <div class="my-0 text-muted small">Fusce dapibus, tellus ac cursus commodo</div>
+                                    <small class="badge badge-pill badge-light text-muted">30m ago</small>
+                                </div>
+                            </div> <!-- / .row -->
+                        </div>
+                        <div class="list-group-item bg-transparent">
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+                                    <span class="fe fe-link fe-24"></span>
+                                </div>
+                                <div class="col">
+                                    <small><strong>Link was attached to menu</strong></small>
+                                    <div class="my-0 text-muted small">New layout has been attached to the menu</div>
+                                    <small class="badge badge-pill badge-light text-muted">1h ago</small>
+                                </div>
+                            </div>
+                        </div> <!-- / .row -->
+                    </div> <!-- / .list-group -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">Clear All</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade modal-shortcut modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="defaultModalLabel">Shortcuts</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body px-5">
+                    <div class="row align-items-center">
+                        <div class="col-6 text-center">
+                            <div class="squircle bg-success justify-content-center">
+                                <i class="fe fe-cpu fe-32 align-self-center text-white"></i>
+                            </div>
+                            <p>Control area</p>
+                        </div>
+                        <div class="col-6 text-center">
+                            <div class="squircle bg-primary justify-content-center">
+                                <i class="fe fe-activity fe-32 align-self-center text-white"></i>
+                            </div>
+                            <p>Activity</p>
+                        </div>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col-6 text-center">
+                            <div class="squircle bg-primary justify-content-center">
+                                <i class="fe fe-droplet fe-32 align-self-center text-white"></i>
+                            </div>
+                            <p>Droplet</p>
+                        </div>
+                        <div class="col-6 text-center">
+                            <div class="squircle bg-primary justify-content-center">
+                                <i class="fe fe-upload-cloud fe-32 align-self-center text-white"></i>
+                            </div>
+                            <p>Upload</p>
+                        </div>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col-6 text-center">
+                            <div class="squircle bg-primary justify-content-center">
+                                <i class="fe fe-users fe-32 align-self-center text-white"></i>
+                            </div>
+                            <p>Users</p>
+                        </div>
+                        <div class="col-6 text-center">
+                            <div class="squircle bg-primary justify-content-center">
+                                <i class="fe fe-settings fe-32 align-self-center text-white"></i>
+                            </div>
+                            <p>Settings</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main> <!-- main -->
+</div> <!-- .wrapper -->
+
+
+{% endblock main %}

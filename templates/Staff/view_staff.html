@@ -1,0 +1,65 @@
+{% extends "index.html" %}
+
+{% block main %}
+
+<div class="contain">
+    <main role="main" class="main-content">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-12 my-4">
+                    <div class="card shadow">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Menu List</h5>
+
+                            </p>
+                            <table class="table table-hover table-bordered text-center">
+                                <thead>
+                                    <tr>
+                                        <th width="25%">First_Name</th>
+                                        <th width="25%">Last_Name</th>
+                                        <th width="20%">Joining Date</th>
+                                        <th width="10%">VIEW</th>
+                                        <th width="10%">EDIT</th>
+                                        <th width="10%">SALARY</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    {% for list in sd %}
+                                    {% if list.item_name != 'Select' %}
+                                    <tr>
+
+
+                                        <td>{{list.First_Name}}</td>
+                                        <td>{{list.Last_Name}}</td>
+                                        <td>{{list.Create_date}}</td>
+                                        <td><span class="badge badge-pill badge-warning"><a
+                                                    href="{% url 'view_profile' list.id %}">VIEW PROFILE</a></span></td>
+                                        <td><span class="badge badge-pill badge-warning"><a
+                                                    href="{% url 'edit_staff' list.id %}">EDIT PROFILE</a></span></td>
+                                        <td><span class="badge badge-pill badge-warning"><a
+                                                    href="{% url 'view_salary' list.id %}">View Salary Paid</a></span></td>
+
+
+                                    </tr>
+
+                                    {% else %}
+                                    {% endif %}
+                                    {% endfor %}
+
+                                </tbody>
+
+                            </table>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+
+{% endblock main %}

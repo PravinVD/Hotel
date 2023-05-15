@@ -1,0 +1,60 @@
+{% extends "index.html" %}
+
+{% block main %}
+
+<div class="contain">
+    <main role="main" class="main-content">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-12 my-4">
+                    <div class="card shadow">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Menu List</h5>
+
+                            </p>
+                            <table class="table table-hover table-bordered text-center">
+                                <thead>
+                                    <tr>
+                                        <th width="10%">ID</th>
+                                        <th width="50%">Name</th>
+                                        <th width="20%">Rate</th>
+                                        <th width="10%">Edit</th>
+                                        <th width="10%">Delete</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    {% for list in list_product %}
+                                    {% if list.item_name != 'Select' %}
+                                    <tr>
+
+                                        <td>{{ forloop.counter }}</td>
+                                        <td>{{list.item_name}}</td>
+                                        <td>{{list.item_rate}}</td>
+                                        <td><span class="badge badge-pill badge-warning"><a
+                                                    href="{% url 'edit_product' list.id %}">EDIT</a></span></td>
+                                        <td><span class="badge badge-pill badge-danger"><a
+                                                    href="{% url 'del_product' list.id %}">DELETE</a></span></td>
+
+                                    </tr>
+
+                                    {% else %}
+                                    {% endif %}
+                                    {% endfor %}
+
+                                </tbody>
+
+                            </table>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+
+{% endblock main %}

@@ -1,0 +1,46 @@
+{% extends "index.html" %}
+
+{% block main %}
+
+<div class="contain">
+    <main role="main" class="main-content">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-12 my-4">
+                    <div class="card shadow">
+                        <div class="card-body ">
+                            <h5 class="card-title border-bottom border-danger">USER PROFILE</h5>
+                            <div class="row container">
+                                <div class="col-4 border border-dark p-2">First Name:</div>
+                                <div class="col-8 border border-dark  p-2">{{sd1.First_Name}} </div>
+                                <div class="col-4 border border-dark p-2">Last Name:</div>
+                                <div class="col-8 border border-dark p-2">{{sd1.Last_Name}}</div>
+                                <div class="col-4 border border-dark p-2">Mobile Number:</div>
+                                <div class="col-8 border border-dark p-2">{{sd1.Mobile_No}}</div>
+                                <div class="col-4 border border-dark p-2">User Creation Date:</div>
+                                <div class="col-8 border border-dark p-2">{{sd1.Create_date}}</div>
+                                <div class="col-4 border border-dark p-2">User Leave Date:</div>
+                                <div class="col-8 border border-dark p-2">{{sd1.Leave_date}}</div>
+                                <div class="col-4 border border-dark p-2">Last Update Date:</div>
+                                <div class="col-8 border border-dark p-2">{{sd1.Last_update_Date}}</div>
+                                <div class="col-4 border border-dark p-2">Address:</div>
+                                <div class="col-8 border border-dark p-2">{{sd1.Address}}</div>
+                                
+                              
+                            </div>
+                         
+    
+   
+
+  
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+
+{% endblock main %}

@@ -1,0 +1,38 @@
+{% extends "index.html" %}
+
+{% block main %}
+<main role="main" class="main-content">
+
+    <form method="post">
+        {% csrf_token %}
+        <div class="card shadow mb-4 cal-12">
+            <div class="card-body">
+               <div class="row">
+                <div class="form-group mb-3 col-md-4 col-12">
+                    <label for="id_Shop_Name">Shop Name</label>
+                    <input type="text" name="Shop_Name" maxlength="150" required id="id_Shop_Name" value = "{{Shop_Detailss.Shop_Name}}" class="form-control">
+                </div>
+                <div class="form-group mb-3 col-md-4 col-12">
+                    <label for="id_Shop_address">Shop Address</label>
+                    <input type="text" name="Shop_address" maxlength="150" required id="id_Shop_address" value="{{Shop_Detailss.Shop_address}}"
+                        class="form-control">
+                </div>
+                <div class="form-group mb-3 col-md-4 col-12">
+                    <label for="id_Number">Mobile Number</label>
+                    <input type="text" name="Number" maxlength="13" required id="id_Number" class="form-control" value="{{Shop_Detailss.Number}}">
+                </div>
+               </div>
+               <div class="text-center">
+                <button type="submit" class="btn btn-primary">Update Detail</button>
+              </div>
+            </div>
+        </div>
+
+
+
+    </form>
+
+</main>
+
+
+{% endblock main %}

@@ -1,0 +1,19 @@
+{% extends "index.html" %}
+
+{% block main %}
+
+<div class="main-content">
+    {% for get in get_detail  %}
+    <div class="row">
+        <div class="col">{{get.Emp_No}}</div>
+        <div class="col">{{get.Emp_Name}}</div>
+        <div class="col">{{get.Amount_Paid}}</div>
+        <div class="col">{{get.Amount_Paid_Date}}</div>
+    </div>
+    {% endfor %}
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda odit esse quisquam dicta veritatis amet minus debitis hic praesentium incidunt rerum, minima unde deleniti inventore sed expedita doloremque dolor facere!</p>
+</div>
+
+{% endblock main %}
+
+

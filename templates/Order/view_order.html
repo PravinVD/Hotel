@@ -1,0 +1,211 @@
+{% extends "index.html" %}
+
+{% block main %}
+{% load static %}
+<main role="main" class="main-content">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-10 col-xl-8">
+                <div class="card shadow">
+                    <div class="card-body p-5">
+                        <div class="row ">
+                            <div class="col-12 text-center ">
+                                <img src="{% static 'Brand.png' %}" class="navbar-brand-img brand-sm mx-auto" alt="...">
+                                <h2 class="mb-0 text-uppercase">{{Shop.Shop_Name}}</h2>
+                                <p class="text-muted"> {{Shop.Shop_address}} </p>
+                                <p class="text-muted">No: {{Shop.Number}} </p>
+                            </div>
+
+                            <div class="col-12 row border-bottom">
+                                <p class="col-8">
+                                    <small class="small text-muted text-uppercase">Order No:</small>
+                                    <strong>{{order.Order_date|date:"Y"}}-{{order.id}}</strong>
+                                </p>
+                                <p class="col-4">
+                                    <small class="small text-muted text-uppercase">Table No:</small>
+                                    <strong>{{order.Table_number}}</strong>
+                                </p>
+                                <p class="col-12">
+                                    <small class="small text-muted text-uppercase text-end">Order date & Time:</small>
+                                    <strong>{{order.Order_date|date:"d/m/Y H:i"}}</strong>
+                                </p>
+                            </div>
+                        </div> <!-- /.row -->
+                        <table class="table-borderless ">
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="col-1">#</th>
+                                    <th scope="col" class="col-7 text-center">Description</th>
+                                    <th scope="col" class="col-1">QTY</th>
+                                    <th scope="col" class="col-1">RATE</th>
+                                    <th scope="col" class="col-2">AMOUNT</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% if order.item0 != "Select" %}
+                                <tr>
+                                    <th scope="row" class="col-1">1</th>
+                                    <td class="col-7 text-center">{{order.item0}}</td>
+                                    <td class="col-1 text-center">{{order.item_qty0}}</td>
+                                    <td class="col-1 text-center">{{order.item_rate0}}</td>
+                                    <td class="col-2 text-center">{{order.item_total0}}</td>
+                                </tr>
+                                
+                                {% else %}
+                                {% endif %}
+
+                                {% if order.item1 != "Select" %}
+                                <tr>
+                                    <th scope="row" class="col-1">2</th>
+                                    <td class="col-7 text-center">{{order.item1}}</td>
+                                    <td class="col-1 text-center">{{order.item_qty1}}</td>
+                                    <td class="col-1 text-center">{{order.item_rate1}}</td>
+                                    <td class="col-2 text-center">{{order.item_total1}}</td>
+                                </tr>
+                                
+                                {% else %}
+                                {% endif %}
+
+                                {% if order.item2 != "Select" %}
+                                <tr>
+                                    <th scope="row" class="col-1">3</th>
+                                    <td class="col-7 text-center">{{order.item2}}</td>
+                                    <td class="col-1 text-center">{{order.item_qty2}}</td>
+                                    <td class="col-1 text-center">{{order.item_rate2}}</td>
+                                    <td class="col-2 text-center">{{order.item_total2}}</td>
+                                </tr>
+                                
+                                {% else %}
+                                {% endif %}
+                                {% if order.item3 != "Select" %}
+                                <tr>
+                                    <th scope="row" class="col-1">4</th>
+                                    <td class="col-7 text-center">{{order.item3}}</td>
+                                    <td class="col-1 text-center">{{order.item_qty3}}</td>
+                                    <td class="col-1 text-center">{{order.item_rate3}}</td>
+                                    <td class="col-2 text-center">{{order.item_total3}}</td>
+                                </tr>
+                                
+                                {% else %}
+                                {% endif %}
+
+
+                                {% if order.item4 != "Select" %}
+                                <tr>
+                                    <th scope="row" class="col-1">5</th>
+                                    <td class="col-7 text-center">{{order.item4}}</td>
+                                    <td class="col-1 text-center">{{order.item_qty4}}</td>
+                                    <td class="col-1 text-center">{{order.item_rate4}}</td>
+                                    <td class="col-2 text-center">{{order.item_total4}}</td>
+                                </tr>
+                                
+                                {% else %}
+                                {% endif %}
+
+
+                                {% if order.item5 != "Select" %}
+                                <tr>
+                                    <th scope="row" class="col-1">6</th>
+                                    <td class="col-7 text-center">{{order.item5}}</td>
+                                    <td class="col-1 text-center">{{order.item_qty5}}</td>
+                                    <td class="col-1 text-center">{{order.item_rate5}}</td>
+                                    <td class="col-2 text-center">{{order.item_total5}}</td>
+                                </tr>
+                                
+                                {% else %}
+                                {% endif %}
+                                {% if order.item6 != "Select" %}
+                                <tr>
+                                    <th scope="row" class="col-1">7</th>
+                                    <td class="col-7 text-center">{{order.item6}}</td>
+                                    <td class="col-1 text-center">{{order.item_qty6}}</td>
+                                    <td class="col-1 text-center">{{order.item_rate6}}</td>
+                                    <td class="col-2 text-center">{{order.item_total6}}</td>
+                                </tr>
+                                
+                                {% else %}
+                                {% endif %}
+
+
+                                {% if order.item7 != "Select" %}
+                                <tr>
+                                    <th scope="row" class="col-1">8</th>
+                                    <td class="col-7 text-center">{{order.item7}}</td>
+                                    <td class="col-1 text-center">{{order.item_qty7}}</td>
+                                    <td class="col-1 text-center">{{order.item_rate7}}</td>
+                                    <td class="col-2 text-center">{{order.item_total7}}</td>
+                                </tr>
+                                
+                                {% else %}
+                                {% endif %}
+
+
+                                {% if order.item8 != "Select" %}
+                                <tr>
+                                    <th scope="row" class="col-1">9</th>
+                                    <td class="col-7 text-center">{{order.item8}}</td>
+                                    <td class="col-1 text-center">{{order.item_qty8}}</td>
+                                    <td class="col-1 text-center">{{order.item_rate8}}</td>
+                                    <td class="col-2 text-center">{{order.item_total8}}</td>
+                                </tr>
+                                
+                                {% else %}
+                                {% endif %}
+
+
+                                {% if order.item9 != "Select" %}
+                                <tr class="border-bottom">
+                                    <th scope="row" class="col-1">10</th>
+                                    <td class="col-7 text-center">{{order.item9}}</td>
+                                    <td class="col-1 text-center">{{order.item_qty9}}</td>
+                                    <td class="col-1 text-center">{{order.item_rate9}}</td>
+                                    <td class="col-2 text-center">{{order.item_total9}}</td>
+                                </tr>
+                                
+                                {% else %}
+                                {% endif %}
+                                {% if order.Discount != 0 %}
+                                <tr>
+                                    <th scope="row" class="col-1"></th>
+                                    <td class="col-7 text-center"></td>
+                                    <td class="col-1 text-center"></td>
+                                    <td class="col-1 text-center border"><strong>Discount</strong></td>
+                                    <td class="col-2 text-center border"><strong>{{order.Discount}}%</strong></td>
+                                </tr>
+                                
+                                {% else %}
+                                {% endif %}
+
+
+                                <tr>
+                                    <th scope="row" class="col-1"></th>
+                                    <td class="col-7 text-center"></td>
+                                    <td class="col-1 text-center"></td>
+                                    <td class="col-1 text-center border"><strong>Total</strong></td>
+                                    <td class="col-2 text-center border"><strong>{{order.total}}</strong></td>
+                                </tr>
+                               
+
+                                
+                               
+                            </tbody>
+                        </table>
+                       
+                         <!-- /.row -->
+                    </div> <!-- /.card-body -->
+                </div> <!-- /.card -->
+            </div> <!-- /.col-12 -->
+        </div> <!-- .row -->
+    </div> <!-- .container-fluid -->
+    <div class="row align-items-center mt-4 container">
+        
+        <div class="container text-center">
+            <a class="btn btn-secondary" href="{% url 'print_order' order.id  %}">Print</a>
+           
+        </div>
+    </div>
+    
+    <
+</main> <!-- main -->
+
+{% endblock main %}

@@ -1,0 +1,31 @@
+{% extends "index.html" %}
+
+{% block main %}
+<main role="main" class="main-content">
+    
+<form action="" method="post">
+{% csrf_token %}
+<div class="card shadow mb-4 cal-12">
+    <div class="card-body">
+<div class="row">
+    <div class="col-md-6 col-12">
+        <div class="form-group mb-3">
+            <label for="id_item_name">Dish/Item Name</label>
+            <input type="text" name="item_name" maxlength="100" required="" id="id_item_name" class="form-control">
+          </div>
+    </div>
+    <div class="col-md-6 col-12">
+        <div class="form-group mb-3">
+            <label for="id_item_rate">Amount Per Dish</label>
+            <input type="number" name="item_rate" required="" id="id_item_rate" class="form-control">
+          </div>
+    </div>
+</div>
+<div class="text-center">
+    <button type="submit" class="btn btn-primary">Add Product</button>
+</div>
+</div>
+</div>
+</form>
+</main>
+{% endblock main %}

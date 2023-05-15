@@ -1,0 +1,62 @@
+{% extends "index.html" %}
+
+{% block main %}
+
+<div class="main-content">
+    <div class="card">
+        <div class="card-header">
+            Daily Expense Form
+        </div>
+        <div class="card-body">
+            <form action="" method="post">
+                {% csrf_token %}
+
+                <div class="col-12 p-1">
+
+                    <label for="id_Expense_date">DATE</label>
+    
+    
+    
+                    <input type="date" name="Expense_date" class="form-control col-12" required id="id_Expense_date">
+    
+    
+                </div>
+    
+                <div class="col-12 p-1">
+    
+                    <label for="id_description">Add details</label>
+    
+    
+    
+                    <textarea name="description" cols="40" rows="10" class="form-control col-12" required
+                        id="id_description">
+    </textarea>
+    
+    
+                </div>
+    
+                <div class="col-12 p-1">
+    
+                    <label for="id_Daily_Total">Today Total Expense</label>
+    
+    
+    
+                    <input type="text" name="Daily_Total" class="form-control col-12 " required id="id_Daily_Total">
+    
+    
+    
+    
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">
+                        Submit
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+
+{% endblock main %}
